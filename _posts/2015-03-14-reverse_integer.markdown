@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Reverse String"
+title:  "Reverse Integer"
 date:   2015-03-14 12:00:10
 categories: leetcode
 ---
-[Reverse String](https://leetcode.com/problems/reverse-integer/)  
+[Reverse Integer](https://leetcode.com/problems/reverse-integer/)  
 Reverse digits of an integer.  
 
 Example1: x = 123, return 321  
