@@ -1,0 +1,45 @@
+---
+layout: post
+title:  "Min Stack"
+date:   2015-06-08 12:00:00
+categories: leetcode
+---
+[Min Stack](https://leetcode.com/problems/min-stack/)  
+Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.  
+- push(x) -- Push element x onto stack.  
+- pop() -- Removes the element on top of the stack.  
+- top() -- Get the top element.  
+- getMin() -- Retrieve the minimum element in the stack.  
+
+{% highlight c++ %}
+class MinStack {
+public:
+    void push(int x) {
+        base.push(x);
+        if (min.empty() || min.top() >= x)
+            min.push(x);
+    }
+
+    void pop() {
+        if (base.empty())
+            return;
+        
+        if (!min.empty() && base.top() == min.top())
+            min.pop();
+            
+        base.pop();
+    }
+
+    int top() {
+        return base.top();
+    }
+
+    int getMin() {
+        return min.top();
+    }
+    
+private:
+    std::stack<int> base;
+    std::stack<int> min;
+};
+{% endhighlight %}
