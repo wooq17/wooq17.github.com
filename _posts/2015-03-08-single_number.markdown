@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Single Number"
-date:   2015-06-08 12:00:10
+date:   2015-03-08 12:00:10
 categories: leetcode
 ---
 [Single Number](https://leetcode.com/problems/single-number/)  
