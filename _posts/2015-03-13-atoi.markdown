@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "String to Integer (atoi)"
+date:   2015-03-13 12:00:10
+categories: leetcode
+---
+[String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/)  
+Implement atoi to convert a string to an integer.  
+
+Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below and ask yourself what are the possible input cases.  
+
+Notes: It is intended for this problem to be specified vaguely (ie, no given input specs). You are responsible to gather all the input requirements up front.  
+
+{% highlight python %}
+class Solution:
+    # @return an integer
+    def atoi(self, str):
+        strLen = len(str)
+        
+        if strLen == 0 :
+            return 0
+            
+        sign = 1
+        startPos = 0
+        result = 0
+        
+        while str[startPos] == ' ' :
+            startPos = startPos + 1
+        
+        if str[startPos] == '-' or str[startPos] == '+' :
+            if str[startPos] == '-' :
+                sign =  sign * -1
+                
+            startPos = startPos + 1
+            
+        for idx in range(startPos, strLen) :
+            if str[idx] < '0' or str[idx] > '9' :
+                result = sign * result
+                if result > 2147483647 :
+                    return 2147483647
+                elif result < -2147483648 :
+                    return -2147483648
+                return result
+            
+            result = result * 10
+            result = result + int(str[idx])
+            
+        
+        result = sign * result
+        if result > 2147483647 :
+            return 2147483647
+        elif result < -2147483648 :
+            return -2147483648
+        return result
+{% endhighlight %}
